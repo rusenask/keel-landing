@@ -5,7 +5,7 @@ subtitle: Keel runs as a single container and is available on DockerHub
 description: "Kubernetes service to automate deployment updates"
 ---
 
-Keel can run anywhere and will do its job as long as it can connect to your Kubernetes environment. Since you have (or plan to have) Kubernetes environment, this guide will show you how to deploy Keel on Kubernetes cluster.
+Keel can run anywhere and will do its job as long as it can connect to your Kubernetes environment. Since you have (or plan to have) Kubernetes environment, this guide will show you how to deploy Keel inside your Kubernetes cluster.
 
 Keel installation consists of:
 
