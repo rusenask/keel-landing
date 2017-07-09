@@ -1,0 +1,16 @@
+<nav id="nav">
+    {% unless page.layout == 'front' %}
+    <ul class="links">
+        {% assign url = page.url|remove:'.html' %}        
+        {% for link in site.navigation %}
+            <li {% if url == link.url %}class="active"{% endif %}>
+                <a href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
+            </li>
+        {% endfor %}               
+    </ul>
+    {% endunless %}
+    <ul class="icons">
+        <li><a href="{{site.social.twitter}}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>                
+        <li><a href="{{site.social.github}}" class="icon fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+</nav>
