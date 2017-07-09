@@ -12,7 +12,10 @@ Keel installation consists of:
 * [Namespace preparation]({{ page.url }}#creating-namespace)
 * [Creating service account]({{ page.url }}#creating-service-account)
 * [Deploying Keel]({{ page.url }}#deploying-keel)
-* [Configuring Triggers]({{ page.url }}#configuring-triggers)
+* [Triggers]({{ page.url }}#triggers)
+	- [Google Cloud PubSub trigger]({{ page.url }}#google-cloud-pubsub-trigger)
+	- [Webhook triggers]({{ page.url }}#webhook-trigger)
+	- [Polling trigger]({{ page.url }}#polling-trigger)
 
 ### Prerequisites
 
@@ -117,13 +120,19 @@ That's it, to check whether it successfully started - check pods:
 kubectl -n keel get pods
 ```
 
-If you have any problems deploying or configuring Keel - submit an issue in our [GitHub page](https://github.com/rusenask/keel/issues).
+You should see something like this:
 
-## Configuring Triggers
+```
+$ kubectl get pods -n keel
+NAME                    READY     STATUS    RESTARTS   AGE
+keel-2732121452-k7sjc   1/1       Running   0          14s
+```
+
+## Triggers
 
 Trigger starts evaluation of your current deployments in order to find impacted containers that need an update. Trigger is an event that has basic information such as _image name_ and _image tag_ (version).
 
-### PubSub trigger
+### Google Cloud PubSub trigger
 
 If you are using Google Container Engine with Container Registry - search no more, pubsub trigger is for you.
 
@@ -161,3 +170,5 @@ polling. Be aware that registries can be rate limited so it's a good practice to
 <ul class="actions">
   <li><a href="/user-guide" class="button big">Next - using Keel</a></li>
 </ul>
+
+If you have any problems deploying or configuring Keel - [submit an issue](https://github.com/rusenask/keel/issues).
