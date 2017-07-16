@@ -86,11 +86,12 @@ While the deployment above works perfect for both webhook and Google Cloud Pubsu
 
 _Note: currently Keel only supports watching the same image tag when polling trigger is used, ie: `latest`. Support for semver during polling is coming soon._ 
 
+_Note: if deployment's image tag doesn't follow Semantic Versioning (ie: it's `latest`) - Keel will watch tag digest. If tag is version (ie: `1.0.1`) then Keel will look for newer tags._
 
 Add labels:
 
 ```
-keel.sh/policy: force
+keel.sh/policy: force # add this to enable updates of non-semver tags
 keel.sh/trigger: poll
 ```
 
@@ -120,8 +121,8 @@ spec:
         app: wd        
 
     spec:
-      containers:                    
-        - image: karolisr/webhook-demo
+      containers:
+        - image: karolisr/webhook-demo:latest # this would start repository digest checks
           imagePullPolicy: Always            
           name: wd
           command: ["/bin/webhook-demo"]
