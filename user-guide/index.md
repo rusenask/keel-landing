@@ -1,12 +1,17 @@
 --- 
 layout: content 
 title: "User guide" 
-subtitle: your app specific update information is described through labels, annotations and values.yaml
+subtitle: your app specific update information is described through labels, annotations and chart configuration
 description: "Using Keel"
 ---
 
 Keel aims to be simple to use and operate in the background so users can focus on important things like
 writing code, testing and admiring their creations.
+
+<!-- ![keel overview]({{ site.url }}/images/triggers-policies-providers.png){: .center-image } -->
+
+<div class="image main"> <img src="/images/triggers-policies-providers.png" alt="" /></div>
+
 
 Keel supports app specific policies, multiple providers, triggers and notification extensions. This guide should provide you a quick
 overview of the system.
@@ -36,8 +41,8 @@ Providers are direct integrations into schedulers or other tools (ie: Helm). Pro
 
 Available providers:
 
-- [Kubernetes provider]({{ page.url }}/kubernetes)
-- [Helm provider]({{ page.url }}/helm)
+- [Kubernetes provider]({{ page.url }}/providers#kubernetes)
+- [Helm provider]({{ page.url }}/providers#helm)
 
 While the goal is often the same, different providers can choose different update strategies.
 
