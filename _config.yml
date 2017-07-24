@@ -44,7 +44,7 @@ navigation:
   url: /
 - text: Install
   url: /install/
-- text: User Guide
+- text: User guide
   url: /user-guide/
 
 # Plugin settings
