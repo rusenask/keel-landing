@@ -20,7 +20,8 @@ description: "Kubernetes service to automate deployment updates"
 		<h3>Keel Overview</h3>
 		<ul>
 			<li>Easy to deploy - stateless, runs as a single container.</li>
-			<li>Updates deployment if you have set Keel policy and newer image is available or <code>force</code> policy is specified.</li>			
+			<li>Out of the box <a href="https://helm.sh" target="_blank">Helm</a> and <a href="https://kubernetes.io/" target="_blank">Kubernetes</a>  integrations.</li>
+			<li>No additional CLI/API calls required, works directly through your configuration (labels, annotations, charts).</li>			
 			<li>Encourages the use of semantic versioning but can work with <code>latest</code> tags as well.</li>
 			<li>Easy to extend with your custom triggers or deployment providers.</li>
 			<li>Built for Kubernetes but support can be added for Swarm, Mesos, Nomad and other providers.</li>
@@ -42,8 +43,10 @@ description: "Kubernetes service to automate deployment updates"
 		<ul>
 			<li>Automated subscription management for <a href="https://cloud.google.com/container-registry/"  target="_blank">Google Container Registry</a>.</li>
 			<li><a href="https://docs.docker.com/docker-hub/webhooks/" target="_blank">DockerHub webhooks</a>.</li>
+			<li><a href="https://docs.quay.io/guides/notifications.html" target="_blank">Quay.io webhooks</a>.</li>
 			<li>Native Keel webhooks.</li>
-			<li>Polling - when webhooks aren't available Keel can watch images for SHA digest change.</li>
+			<li>Direct integration with Helm's Tiller to make canonical release upgrades.</li>
+			<li>Polling - when webhooks aren't available Keel can watch images for SHA digest change or tags with new versions.</li>
 			<li>Slack and webhook notifications for taken actions or errors.</li>
 		</ul>		
 
