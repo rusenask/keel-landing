@@ -99,15 +99,15 @@ Custom polling schedule can be specified as cron format or through predefined sc
 
 Available schedules:
 
-```
+
 Entry                  | Description                                | Equivalent To
 -----                  | -----------                                | -------------
-@yearly (or @annually) | Run once a year, midnight, Jan. 1st        | 0 0 0 1 1 *
-@monthly               | Run once a month, midnight, first of month | 0 0 0 1 * *
-@weekly                | Run once a week, midnight on Sunday        | 0 0 0 * * 0
-@daily (or @midnight)  | Run once a day, midnight                   | 0 0 0 * * *
-@hourly                | Run once an hour, beginning of hour        | 0 0 * * * *
-```
+@yearly (or @annually) | Run once a year, midnight, Jan. 1st        | `0 0 0 1 1 *`
+@monthly               | Run once a month, midnight, first of month | `0 0 0 1 * *`
+@weekly                | Run once a week, midnight on Sunday        | `0 0 0 * * 0`
+@daily (or @midnight)  | Run once a day, midnight                   | `0 0 0 * * *`
+@hourly                | Run once an hour, beginning of hour        | `0 0 * * * *`
+
 
 #### Intervals
 
@@ -120,8 +120,8 @@ where _duration_ is a string accepted by [time.ParseDuration](http://golang.org/
 For example, _@every 1h30m10s_ would indicate a schedule that activates every 1 hour, 30 minutes, 10 seconds.
 
 
-_If you want to disable polling support for your Keel installation - set environment variable
-__POLL=0__._
+> **Tip**: If you want to disable polling support for your Keel installation - set environment variable
+__POLL=0__.
 
 
 <ul class="actions">

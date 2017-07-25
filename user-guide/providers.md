@@ -78,7 +78,7 @@ If Keel gets an event that `karolisr/webhook-demo:0.0.3` is available - it will 
 
 While the deployment above works perfect for both webhook and Google Cloud Pubsub triggers sometimes you can't control these events and the only available solution is to check registry yourself. This is where polling trigger comes to the rescue.
 
-_Note: when image with non-semver style tag is supplied (ie: `latest`) Keel will monitor SHA digest. If tag is semver - it will track and notify providers when new versions are available._ 
+> **Note**: when image with non-semver style tag is supplied (ie: `latest`) Keel will monitor SHA digest. If tag is semver - it will track and notify providers when new versions are available.
 
 
 Add labels:
@@ -90,7 +90,7 @@ keel.sh/trigger: poll
 
 To specify custom polling schedule, check [cron expression format]({{ page.url }}#cron-expression-format)
 
-_Note that even if polling trigger is set - webhooks or pubsub events can still trigger updates_
+> **Note** that even if polling trigger is set - webhooks or pubsub events can still trigger updates
 
 Example deployment file for polling:
 
@@ -176,7 +176,7 @@ If Keel gets an event that `karolisr/webhook-demo:0.0.9` is available - it will 
 
 This example demonstrates Keel configuration for polling.
 
-_Note that even if polling trigger is set - webhooks or pubsub events can still trigger updates_
+> **Note** that even if polling trigger is set - webhooks or pubsub events can still trigger updates
 
 ```
 replicaCount: 1
