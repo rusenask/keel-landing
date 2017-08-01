@@ -5,7 +5,7 @@ subtitle: Keel runs as a single container and can upgrade itself when new versio
 description: "Installing Keel on Kubernetes with Helm"
 ---
 
-Helm chart is available on [Github here](https://github.com/rusenask/keel/tree/master/chart/keel).
+Helm chart is available on [KubeApps](https://kubeapps.com/charts/stable/keel) stable charts and   [Github here](https://github.com/rusenask/keel/tree/master/chart/keel).
 
 Keel installation with Helm:
 
@@ -20,7 +20,8 @@ Keel installation with Helm:
 Docker image _polling_ and _Kubernetes_ provider are set by default, then Kubernetes _deployments_ can be upgraded when new Docker image is available:
 
 ```console
-helm upgrade --install keel keel
+helm repo up
+helm upgrade --install keel stable/keel
 ```
 
 ## Installing the Chart with Helm provider support
@@ -28,7 +29,7 @@ helm upgrade --install keel keel
 Docker image _polling_ is set by default, but we need to enable _Helm provider_ support, then Helm _releases_ can be upgraded when new Docker image is available:
 
 ```console
-helm upgrade --install keel keel --set helmProvider.enabled="true"
+helm upgrade --install keel stable/keel --set helmProvider.enabled="true"
 ```
 
 ### Setting up Helm release to be automatically updated by Keel
@@ -103,7 +104,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name keel -f values.yaml keel
+helm install --name keel -f values.yaml stable/keel
 ```
 > **Tip**: You can use the default [values.yaml](values.yaml)
 
