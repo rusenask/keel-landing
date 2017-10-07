@@ -19,6 +19,7 @@ overview of the system.
 * [Policies]({{ page.url }}#policies)
 * [Providers]({{ page.url }}#providers)
 * [Triggers]({{ page.url }}#triggers)
+* [Approvals]({{ page.url }}#approvals)
 * [Notifications]({{ page.url }}#notifications)
 
 ## Policies
@@ -59,6 +60,21 @@ Available triggers:
   * [Receiving webhooks without public endpoint]({{ page.url }}/triggers#receiving-webhooks-without-public-endpoint)
 - [Google Cloud GCR registry]({{ page.url }}/triggers#google-cloud-gcr-registry) 
 - [Polling]({{ page.url }}/triggers#polling)
+
+## Approvals
+
+Users can specify on deployments and Helm charts how many approvals do they have to collect before a resource gets updated. Main features:
+
+* __non-blocking__ - multiple deployments/helm releases can be queued for approvals, the ones without specified approvals will be auto updated.
+* __extensible__ - current implementation focuses on Slack but additional approval collection mechanisms are trivial to implement.
+* __out of the box Slack integration__ - the only needed Keel configuration is Slack auth token, Keel will start requesting approvals and users will be able to approve.
+* __stateful__ - uses [github.com/rusenask/k8s-kv](https://github.com/rusenask/k8s-kv) for persistence so even after updating itself (restarting) it will retain existing info.
+* __self cleaning__ - expired approvals will be removed after deadline is exceeded.
+
+Details on how to configure your approvals:
+
+- [Kubernetes provider]({{ page.url }}/approvals#kubernetes)
+- [Helm provider]({{ page.url }}/approvals#helm)
 
 ## Notifications
 
