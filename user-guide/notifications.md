@@ -72,3 +72,8 @@ Webhook payload sample:
 First, get a Slack token, info about that can be found in the [docs](https://get.slack.help/hc/en-us/articles/215770388-Create-and-regenerate-API-tokens). Then, provide token via __SLACK_TOKEN__ environment variable. You should also provide __SLACK_CHANNELS__ environment variable with a comma separated list of channels where these notifications should be delivered to.
 
 Keel will be sending messages when deployment updates succeed or fail.
+
+
+### Notification levels
+
+Set notification levels via `NOTIFICATION_LEVEL` environment variable. Available levels: debug, info, success, warn, error, fatal. This setting defaults to `info`.
