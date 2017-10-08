@@ -46,6 +46,8 @@ navigation:
   url: /install/
 - text: User guide
   url: /user-guide/
+- text: FAQ
+  url: /faq
 
 # Plugin settings
 gems:

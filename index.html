@@ -16,7 +16,7 @@ description: "Kubernetes service to automate deployment updates"
 				We encourage the use of <a href="http://semver.org/" target="_blank">semantic versioning</a> but since nobody's perfect - 'latest' tag is supported as well.
 			</p>
 		</header>		
-		<div class="image main"> <img src="images/keel-overview.png" alt="" /></div>
+		<div class="image main"> <img src="images/keel-overview.png" alt="" /></div>		
 		<h3>Keel Overview</h3>
 		<ul>
 			<li>Easy to deploy - stateless, runs as a single container.</li>
@@ -24,6 +24,7 @@ description: "Kubernetes service to automate deployment updates"
 			<li>No additional CLI/API calls required, works directly through your configuration (labels, annotations, charts).</li>			
 			<li>Encourages the use of semantic versioning but can work with <code>latest</code> tags as well.</li>
 			<li>Easy to extend with your custom triggers or deployment providers.</li>
+			<li>Optionaly approve new version before updating.</li>
 			<li>Built for Kubernetes but support can be added for Swarm, Mesos, Nomad and other providers.</li>
 		</ul>
 		<h3>Why?</h3>
@@ -45,14 +46,33 @@ description: "Kubernetes service to automate deployment updates"
 			<li><a href="https://docs.docker.com/docker-hub/webhooks/" target="_blank">DockerHub webhooks</a>.</li>
 			<li><a href="https://docs.quay.io/guides/notifications.html" target="_blank">Quay.io webhooks</a>.</li>
 			<li>Private registries.</li>
+			<li>Approvals - specify how many approves should a new version collect before updating and vote through Slack.</li>
 			<li>Native Keel webhooks.</li>
 			<li>Direct integration with Helm's Tiller to make canonical release upgrades.</li>
 			<li>Polling - when webhooks aren't available Keel can watch images for SHA digest change or tags with new versions.</li>
 			<li>Slack and webhook notifications for taken actions or errors.</li>
-		</ul>		
-
+		</ul>				
 		<ul class="actions">
 			<li><a href="/install" class="button big">Install Keel</a></li>
 		</ul>
-	</article>
+		<h2>Support</h2>
+		<p>
+			Has Keel helped you or your organisation by saving time?
+			You can show your support by backing the project on Patreon or Paypal:			
+		</p>
+		<div class="row">
+			<div class="6u 12u$(small)">
+				<header>          
+					<h4><a href="https://www.patreon.com/keel">Patreon</a></h4>
+				</header>
+				<a href="https://www.patreon.com/keel" class="image fit"><img src="/images/patreon_logo.png" alt="" /></a>				
+			</div>
+			<div class="6u 12u$(small)">
+				<header>          
+				<h4><a href="https://www.paypal.me/keelhq">Paypal</a></h4>
+				</header>
+				<a href="https://www.paypal.me/keelhq" class="image fit"><img src="/images/paypal.png" alt="" /></a>				
+			</div>
+		</div>
+	</article>		
 </div>
