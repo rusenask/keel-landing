@@ -11,8 +11,8 @@ Keel can run anywhere and will do its job as long as it can connect to your Kube
 Keel installation consists of:
 
 <!-- * [Namespace preparation]({{ page.url }}#creating-namespace) -->
-* [Creating service account]({{ page.url }}#creating-service-account)
-* [Creating deployment]({{ page.url }}#creating-deployment)
+* [Creating service account]({{ page.url }}#create-service-account)
+* [Creating deployment]({{ page.url }}#create-deployment)
 
 ### Prerequisites
 
@@ -21,7 +21,7 @@ Keel installation consists of:
 
 Configuration sample files are available in Keel repository on GitHub [here](https://github.com/rusenask/keel/tree/master/hack).
 
-## Creating service account
+## Create service account
 
 Keel will be updating deployments, so let's create a new [service account](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) in keel namespace:
 
@@ -60,7 +60,7 @@ spec:
         app: keel      
     spec:
       containers:                    
-        - image: karolisr/keel:0.4.0
+        - image: karolisr/keel:0.5.0
           imagePullPolicy: Always
           env:          
             - name: POLL
@@ -77,7 +77,9 @@ spec:
             # - name: SLACK_TOKEN
             #   value: your-token-here
             # - name: SLACK_CHANNELS
-            #   value: general            
+            #   value: general           
+            # - name: SLACK_APPROVALS_CHANNEL 
+            #   value: approvals 
           name: keel
           command: ["/bin/keel"]
           ports:
