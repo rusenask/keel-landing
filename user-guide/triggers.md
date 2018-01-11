@@ -54,8 +54,7 @@ Example sidecar container configuration for your `deployments.yaml`:
 
 ```
         - image: webhookrelay/webhookrelayd:0.6.0
-          name: webhookrelayd
-          command: ["/relayd"]
+          name: webhookrelayd          
           env:                         
             - name: KEY
               valueFrom:
@@ -71,7 +70,7 @@ Example sidecar container configuration for your `deployments.yaml`:
               value: dockerhub      
 ```
 
-## Google Cloud GCR registry
+## Google Cloud GCR registry  
 
 If you are using Google Container Engine with Container Registry - search no more, pubsub trigger is for you.
 
