@@ -53,7 +53,7 @@ If you don't want to expose your Keel service - recommended solution is [https:/
 Example sidecar container configuration for your `deployments.yaml`:
 
 ```
-        - image: webhookrelay/webhookrelayd:0.2.7
+        - image: webhookrelay/webhookrelayd:0.6.0
           name: webhookrelayd
           command: ["/webhookrelayd"]
           env:                         
