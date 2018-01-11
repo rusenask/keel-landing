@@ -55,7 +55,7 @@ Example sidecar container configuration for your `deployments.yaml`:
 ```
         - image: webhookrelay/webhookrelayd:0.6.0
           name: webhookrelayd
-          command: ["/webhookrelayd"]
+          command: ["/relayd"]
           env:                         
             - name: KEY
               valueFrom:
